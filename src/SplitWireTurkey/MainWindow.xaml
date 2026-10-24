@@ -899,7 +899,7 @@
                 </Grid>
             </TabItem>
 
-            <!-- Zapret Tab -->
+<!-- Zapret Tab -->
             <TabItem Header="Zapret" FontFamily="{StaticResource PoppinsBold}">
                 <Grid Margin="16">
                     <Grid.RowDefinitions>
@@ -910,6 +910,7 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/> <!-- Ekstra satır alanı için eklendi -->
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     
@@ -1146,10 +1147,33 @@
                             </Button.ToolTip>
                         </Button>
                     </StackPanel>
+
+                    <!-- Ettiğiniz StackPanel (Sadece şu sitelerde çalışsın ve TextBox alanı) -->
+                    <StackPanel Grid.Row="6" Margin="12,0,12,20" HorizontalAlignment="Center" Width="550">
+                        <CheckBox
+                            x:Name="OnlySpecifiedSitesCheckBox"
+                            Content="Sadece şu sitelerde çalışsın"
+                            Margin="0,0,0,12" />
+
+                        <TextBlock
+                            Text="İzin verilen siteler (her satıra bir domain):"
+                            FontWeight="SemiBold"
+                            Margin="0,0,0,8" />
+
+                        <TextBox
+                            x:Name="AllowedSitesTextBox"
+                            Height="140"
+                            AcceptsReturn="True"
+                            TextWrapping="NoWrap"
+                            VerticalScrollBarVisibility="Auto"
+                            HorizontalScrollBarVisibility="Auto"
+                            FontFamily="Consolas"
+                            Text="youtube.com&#x0A;github.com&#x0A;twitter.com" />
+                    </StackPanel>
                     
                     <!-- Remove Zapret Button -->
                     <Button x:Name="btnRemoveZapret" 
-                            Grid.Row="6" 
+                            Grid.Row="7" 
                             Content="Zapret'i Kaldır" 
                             Width="200"
                             HorizontalAlignment="Center"
